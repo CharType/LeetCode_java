@@ -22,5 +22,6 @@ public class _面试题62_圆圈中最后剩下的数字 {
     public static void main(String[] args) {
         _面试题62_圆圈中最后剩下的数字 o = new _面试题62_圆圈中最后剩下的数字();
         System.out.println(o.lastRemaining2(10,17));
+
     }
 }
