@@ -29,9 +29,9 @@ package com.精选Top面试题;
  */
 public class _12_13_罗马数字和整数互转 {
 
-    // 整数转换成罗马数字
+    // TODO:整数转换成罗马数字
     public String intToRoman(int num) {
-
+        return "";
     }
     // 罗马数字转换成整数
     public int romanToInt(String s) {
