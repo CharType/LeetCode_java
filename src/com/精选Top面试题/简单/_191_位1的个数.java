@@ -1,4 +1,4 @@
-package com.精选Top面试题;
+package com.精选Top面试题.简单;
 
 /**
  * https://leetcode-cn.com/problems/number-of-1-bits/

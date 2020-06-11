@@ -1,7 +1,6 @@
-package com.精选Top面试题;
+package com.精选Top面试题.简单;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

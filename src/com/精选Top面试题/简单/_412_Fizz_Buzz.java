@@ -1,6 +1,5 @@
-package com.精选Top面试题;
+package com.精选Top面试题.简单;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 

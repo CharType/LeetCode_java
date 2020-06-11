@@ -1,6 +1,4 @@
-package com.精选Top面试题;
-
-import com.tools.Integers;
+package com.精选Top面试题.简单;
 
 /**
  * https://leetcode-cn.com/problems/single-number/

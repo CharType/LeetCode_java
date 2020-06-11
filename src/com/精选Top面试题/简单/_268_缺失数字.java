@@ -1,4 +1,4 @@
-package com.精选Top面试题;
+package com.精选Top面试题.简单;
 
 import java.util.Arrays;
 
@@ -15,22 +15,26 @@ import java.util.Arrays;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class _268_缺失数字 {
+    //TODO:暂时先放一下，没做完
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);
         int resurt = 0;
         for (int i = 0;i < nums.length;i++) {
-
             if (nums[i] != (nums[0]+i)) {
-                resurt = nums[i]+1;
+                resurt = nums[i -1]+1;
                 break;
             }
+        }
+        if (resurt == 0) {
+            resurt = nums[nums.length - 1] + 1;
         }
         return resurt;
     }
 
     public static void main(String[] args) {
         _268_缺失数字 o = new _268_缺失数字();
-        int [] nums = {9,6,4,2,3,5,7,0,1};
+//        int [] nums = {9,6,4,2,3,5,7,0,1};
+        int [] nums = {0,1};
         System.out.println(o.missingNumber(nums));
     }
 }

@@ -1,8 +1,7 @@
-package com.精选Top面试题;
+package com.精选Top面试题.简单;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 编写一个算法来判断一个数 n 是不是快乐数。
