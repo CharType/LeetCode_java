@@ -29,27 +29,6 @@ public class _11_盛最多水的容器 {
         return maxArge;
     }
 
-    /**
-     * 时间复杂度：O(n)
-     * 空间复杂度：O(1)
-     *
-     */
-    public int maxArea(int[] height) {
-        if (height == null || height.length <= 2) return 0;
-        int left = 0;
-        int right = height.length - 1;
-        int maxArge = 0;
-        while (left < right) {
-            maxArge = Math.max(maxArge,(right - left) * Math.min(height[left],height[right]));
-            if (height[left] > height[right]) {
-                right--;
-            } else {
-                left++;
-            }
-
-        }
-        return maxArge;
-    }
 
     public static void main(String[] args) {
         _11_盛最多水的容器 o = new _11_盛最多水的容器();

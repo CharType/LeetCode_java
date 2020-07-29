@@ -9,16 +9,14 @@ public class _189_旋转数组 {
     public void rotate(int[] nums, int k) {
         if (nums == null) return;;
         if (nums.length <=1) return;
-        int num = k % nums.length;
-        if (k == 0) return;
-        int leftindex = 0;
-        int rightIndex = nums.length - k ;
-        while (rightIndex < nums.length) {
-            int temp = nums[leftindex];
-            nums[leftindex] = nums[rightIndex];
-            nums[rightIndex] = temp;
-            leftindex++;
-            rightIndex++;
+        int temp;
+        while (k > 0) {
+            temp = nums[nums.length-1];
+            for (int i = nums.length -2;i >= 0;i--) {
+                nums[i+1] = nums[i];
+            }
+            nums[0] = temp;
+            k--;
         }
     }
 

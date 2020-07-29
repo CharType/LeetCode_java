@@ -22,7 +22,8 @@ public class _42_接雨水 {
         for (int i = lastIndex; i >=1; i--) {
             rightMaxValues[i] = Math.max(height[i+1],rightMaxValues[i+1]);
         }
-
+        Integers.println(leftMaxValues);
+        Integers.println(rightMaxValues);
         // 能存多少水等于最小的那个数字减去自己的高度
         int sum = 0;
         for (int i = 1;i <= lastIndex; i++) {
@@ -58,8 +59,8 @@ public class _42_接雨水 {
 
     public static void main(String[] args) {
         _42_接雨水 o = new _42_接雨水();
-//        int [] height = {0,1,0,2,1,0,1,3,2,1,2,1};
-        int [] height = {2,0,2};
-        System.out.println(o.trap1(height));
+        int [] height = {0,1,0,2,1,0,1,3,2,1,2,1};
+//        int [] height = {2,0,2};
+        System.out.println(o.trap(height));
     }
 }

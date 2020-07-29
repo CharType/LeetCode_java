@@ -115,6 +115,14 @@ public class Integers {
 		}
 		return true;
 	}
+
+	public static boolean isDescOrder(Integer[] array) {
+		if (array == null || array.length == 0) return false;
+		for (int i = 1; i < array.length; i++) {
+			if (array[i - 1] > array[i]) return true;
+		}
+		return false;
+	}
 	
 	public static void println(Integer[] array) {
 		if (array == null) return;
