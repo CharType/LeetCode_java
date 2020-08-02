@@ -32,7 +32,7 @@ public class _5_最长回文字串 {
             for (int j=i;j < chars.length;j++) {
                 int len = j - i + 1;
                 dp[i][j] = ((chars[i] == chars[j]) && (len <=2 || chars[i+1] == chars[j-1]));
-                if (len > maxLen) {
+                if (dp[i][j] && len > maxLen) {
                     maxLen = len;
                     begin = i;
                 }

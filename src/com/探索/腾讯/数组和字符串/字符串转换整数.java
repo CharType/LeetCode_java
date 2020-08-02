@@ -5,6 +5,18 @@ package com.探索.腾讯.数组和字符串;
  */
 public class 字符串转换整数 {
     public int myAtoi(String str) {
+        if (str == null) return 0;
+        char [] chars = str.toCharArray();
+        if (chars.length == 0) return 0;
+        char f;
+        for (int i = 0;i < chars.length;i++) {
+            if (chars[i] == ' ') continue;
+            if (chars[i] == '-') {
+                f = chars[i];
+                continue;
+            }
+
+        }
         return 0;
 
     }

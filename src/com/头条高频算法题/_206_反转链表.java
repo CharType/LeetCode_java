@@ -64,10 +64,10 @@ public class _206_反转链表 {
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
-//        head.next = new ListNode(2);
-//        head.next.next = new ListNode(3);
-//        head.next.next.next = new ListNode(4);
-//        head.next.next.next.next = new ListNode(5);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
 //
         _206_反转链表 o = new _206_反转链表();
 //        System.out.println(o.reverseList1(head));

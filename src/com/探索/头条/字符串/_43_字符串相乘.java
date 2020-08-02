@@ -102,8 +102,8 @@ public class _43_字符串相乘 {
 
     public static void main(String[] args) {
         _43_字符串相乘 o = new _43_字符串相乘();
-        String s1 = "123456";
-        String s2 = "17891011";
+        String s1 = "123";
+        String s2 = "456";
         System.out.println(o.multiply3(s1,s2));
     }
 }

@@ -28,6 +28,7 @@ public class 无重复字符的最长子串 {
 
     public static void main(String[] args) {
         无重复字符的最长子串 o = new 无重复字符的最长子串();
+        Asserts.test(o.lengthOfLongestSubstring("df") == 2);
         Asserts.test(o.lengthOfLongestSubstring("abcabcbb") == 3);
         Asserts.test(o.lengthOfLongestSubstring("pwwkew") == 3);
         Asserts.test(o.lengthOfLongestSubstring("ckilbkd") == 5);

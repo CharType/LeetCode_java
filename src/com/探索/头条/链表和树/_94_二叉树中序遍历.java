@@ -11,7 +11,7 @@ import java.util.Stack;
  * 中序遍历 先遍历左节点，在遍历自己，在遍历右节点
  *
  */
-public class _94_二叉树的中序遍历 {
+public class _94_二叉树中序遍历 {
     private List<Integer> list = new ArrayList<>();
     public List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
@@ -39,7 +39,7 @@ public class _94_二叉树的中序遍历 {
 
     public static void main(String[] args) {
 
-        _94_二叉树的中序遍历 o = new _94_二叉树的中序遍历();
+        _94_二叉树中序遍历 o = new _94_二叉树中序遍历();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(5);

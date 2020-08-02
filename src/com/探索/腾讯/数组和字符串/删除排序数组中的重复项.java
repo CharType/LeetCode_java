@@ -7,13 +7,18 @@ import com.tools.Integers;
  */
 public class 删除排序数组中的重复项 {
     public int removeDuplicates(int[] nums) {
-        if (nums == null) return 0;
+        if (nums == null || nums.length == 0) return 0;
         if (nums.length == 1) return 1;
-        int count = 0;
-        for (int i = 0;i < nums.length;i++) {
-
+        int i = 0;
+        for (int j = 0;j < nums.length;j++) {
+            if (nums[i] != nums[j]) {
+                // 如果后一个数和前一个数不相等那么i++;
+                i++;
+                // 并且将后一个数添加到新的位置上去
+                nums[i] = nums[j];
+            }
         }
-        return nums.length - count;
+        return i;
     }
 
     public static void main(String[] args) {

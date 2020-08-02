@@ -5,25 +5,24 @@ import com.TreeNode.TreeNode;
 import java.util.PriorityQueue;
 
 /**
- *  https://leetcode-cn.com/explore/interview/card/tencent/224/sort-and-search/929/
+ * https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/
  */
-public class 二叉搜索树中第K小的元素 {
-    PriorityQueue<Integer> queue = new PriorityQueue<>((Integer o1,Integer o2)-> o2 - o1);
+public class 剑指Offer54二叉搜索树的第k大节点 {
+    PriorityQueue<Integer> queue = new PriorityQueue<>();
     public int kthLargest(TreeNode root, int k) {
         if (root == null) return 0;
-        kthLargest(root.left,k);
-        if (queue.size() < k) {
+        kthLargest(root.right,k);
+        if (queue.size()<k) {
             queue.add(root.val);
         } else {
             return queue.peek();
         }
-        kthLargest(root.right,k);
-
+        kthLargest(root.left,k);
         return queue.peek();
     }
 
     public static void main(String[] args) {
-        二叉搜索树中第K小的元素 o = new 二叉搜索树中第K小的元素();
+        剑指Offer54二叉搜索树的第k大节点 o =  new 剑指Offer54二叉搜索树的第k大节点();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(5);
@@ -33,6 +32,6 @@ public class 二叉搜索树中第K小的元素 {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
 
-        System.out.println(o.kthLargest(root,4));
+        System.out.println(o.kthLargest(root,3));
     }
 }

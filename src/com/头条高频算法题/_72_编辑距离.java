@@ -33,6 +33,7 @@ public class _72_编辑距离 {
 
     public static void main(String[] args) {
         _72_编辑距离 o = new _72_编辑距离();
-        System.out.println(o.minDistance("horseajshdkadhka","rosksjdhkahjaksdaks"));
+//        System.out.println(o.minDistance("horseajshdkadhka","rosksjdhkahjaksdaks"));
+        System.out.println(o.minDistance("","a"));
     }
 }
