@@ -18,9 +18,16 @@ public class _1027_最长等差数列 {
             dp[i] = new HashMap<>();
             for (int j = 0;j < i;j++) {
                 int diff = A[i] - A[j];
-                // 如果j的前面也存在diff 的等差序列，就把它加上            }
+                // 如果j的前面也存在diff 的等差序列，就把它加上
+                if (dp[j].containsKey(diff)) {
+                    dp[i].put(diff,dp[j].get(diff) + 1);
+                } else {
+                    dp[i].put(diff,2);
+                }
+                res = Math.max(res,dp[i].get(diff));
+            }
         }
-        return 0;
+        return res;
     }
 
     public static void main(String[] args) {
