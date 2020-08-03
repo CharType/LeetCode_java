@@ -17,7 +17,7 @@ public class _139_单词拆分 {
         for (int i = 0;i < s.length();i++) {
 
         }
-        
+        return false;
     }
 
     public static void main(String[] args) {
