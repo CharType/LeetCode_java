@@ -1,7 +1,7 @@
 package com.探索.快手;
 
 /**
- * https://leetcode-cn.com/problems/longest-palindromic-substring/
+ *
  *  * 动态规划题目
  *  * 定义dp  dp(i，j)表示从i开始 到j结尾，这个字符串是否是一个回文字串
  *  * i-j+1 是字符串的长度  如果长度<=2 那么第i个字符和第j个字符相等，它就是一个最长回文字串

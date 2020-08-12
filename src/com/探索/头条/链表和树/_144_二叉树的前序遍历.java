@@ -56,8 +56,13 @@ public class _144_二叉树的前序遍历 {
     public static void main(String[] args) {
         _144_二叉树的前序遍历 o = new _144_二叉树的前序遍历();
         TreeNode root = new TreeNode(1);
-        root.right = new TreeNode(2);
-        root.right.left = new TreeNode(3);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(5);
+        root.left.left = new TreeNode(3);
+        root.left.right = new TreeNode(4);
+
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
         System.out.println(o.preorderTraversal1(root));
         System.out.println(o.preorderTraversal(root));
     }
