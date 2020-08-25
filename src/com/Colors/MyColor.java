@@ -1,6 +1,6 @@
 package com.Colors;
 
-public class Main {
+public class MyColor {
     public static void main(String[] args) {
         rgba();
     }
