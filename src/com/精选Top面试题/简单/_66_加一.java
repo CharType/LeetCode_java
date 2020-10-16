@@ -2,6 +2,9 @@ package com.精选Top面试题.简单;
 
 import com.tools.Integers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  */
@@ -27,6 +30,7 @@ public class _66_加一 {
         _66_加一 o = new _66_加一();
         int [] nums = {9,9,8};
         Integers.println(o.plusOne(nums));
+
 
     }
 }
