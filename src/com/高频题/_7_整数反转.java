@@ -30,7 +30,7 @@ public class _7_整数反转 {
 
     public static void main(String[] args) {
         _7_整数反转 o = new _7_整数反转();
-        System.out.println(o.reverse1(2100));
+        System.out.println(o.reverse(2100));
 
     }
 }

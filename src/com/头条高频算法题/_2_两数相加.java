@@ -75,12 +75,12 @@ public class _2_两数相加 {
     public static void main(String[] args) {
         _2_两数相加 o = new _2_两数相加();
         ListNode head = new ListNode(5);
-//        head.next = new ListNode(9);
-//        head.next.next = new ListNode(3);
+        head.next = new ListNode(9);
+        head.next.next = new ListNode(3);
 
         ListNode head1 = new ListNode(5);
-//        head1.next = new ListNode(9);
-//        head1.next.next = new ListNode(4);
+        head1.next = new ListNode(9);
+        head1.next.next = new ListNode(4);
 
         System.out.println(o.addTwoNumbers(head,head1));
     }
