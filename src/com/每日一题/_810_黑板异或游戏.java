@@ -31,6 +31,6 @@ public class _810_黑板异或游戏 {
     }
 
     public static void main(String[] args) {
-
+        return;
     }
 }
