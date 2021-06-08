@@ -33,8 +33,21 @@ public class LinkedList<E> extends AbstractList<E> {
      * @return
      */
     @Override
-    public E set(int index, Object element) {
-        return null;
+    public E set(int index, E element) {
+        rangeCheck(index);
+        E oldElement;
+        if (index == 0) {
+            oldElement = first.element;
+            first.element = element;
+        } else if (index == size) {
+            oldElement = last.element;
+            last.element = element;
+        } else {
+            Node<E> node = node(index);
+            oldElement = node.element;
+            node.element = element;
+        }
+        return oldElement;
     }
 
     /**
@@ -44,8 +57,35 @@ public class LinkedList<E> extends AbstractList<E> {
      * @param element
      */
     @Override
-    public void add(int index, Object element) {
+    public void add(int index, E element) {
+        rangeCheckForAdd(index);
 
+        if (index == size) {
+            // 往最后面添加
+            Node oldLast = last;
+            Node<E> newNode = new Node<>(last, element, null);
+            if (oldLast == null) {
+                // 第一次添加数据
+                first = newNode;
+            } else {
+                last.next = newNode;
+            }
+            last = newNode;
+
+        } else {
+            Node<E> next = node(index);
+            Node<E> prev = next.prev;
+            Node<E> node = new Node<>(prev, element, next);
+            if (prev == null) {
+                first = node;
+            } else {
+                prev.next = node;
+                next.prev = node;
+
+            }
+
+        }
+        size++;
     }
 
     /**
@@ -56,7 +96,12 @@ public class LinkedList<E> extends AbstractList<E> {
      */
     @Override
     public E remove(int index) {
-        return null;
+        rangeCheck(index);
+        Node<E> node = node(index);
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+        size--;
+        return node.element;
     }
 
     /**
@@ -66,8 +111,20 @@ public class LinkedList<E> extends AbstractList<E> {
      * @return
      */
     @Override
-    public int indexof(Object element) {
-        return 0;
+    public int indexof(E element) {
+        Node node = first;
+        int index = 0;
+        while (node != null) {
+            if (node.element.equals(element)) {
+                break;
+            }
+            node = node.next;
+            index++;
+        }
+        if (index < size) {
+            return index;
+        }
+        return ELEMENT_NOT_FOUND;
     }
 
     /**
@@ -76,7 +133,7 @@ public class LinkedList<E> extends AbstractList<E> {
      * @param index
      * @return
      */
-    private Node<E node(int index) {
+    private Node<E> node(int index) {
         rangeCheck(index);
 
         if (index < (size >> 1)) {
@@ -95,14 +152,49 @@ public class LinkedList<E> extends AbstractList<E> {
 
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        Node node = first;
+        while (node != null) {
+            sb.append(' ' + node.element.toString() + ' ');
+            node = node.next;
+        }
+        sb.append(']');
+        return sb.toString();
+    }
+
     private static class Node<E> {
         E element;
         Node<E> prev;
         Node<E> next;
 
-        public Node(E element, Node<E> prev) {
+        public Node(Node<E> prev, E element, Node<E> next) {
             this.element = element;
             this.prev = prev;
+            this.next = next;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+
+            if (prev != null) {
+                sb.append(prev.element);
+            } else {
+                sb.append("null");
+            }
+
+            sb.append("_").append(element).append("_");
+
+            if (next != null) {
+                sb.append(next.element);
+            } else {
+                sb.append("null");
+            }
+
+            return sb.toString();
         }
     }
 }
