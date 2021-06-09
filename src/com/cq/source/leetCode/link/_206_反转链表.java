@@ -6,10 +6,10 @@ public class _206_反转链表 {
     // 递归反转
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) return head;
-
         ListNode newHead = reverseList(head.next);
         head.next.next = head;
         head.next = null;
+
         return newHead;
 
     }
@@ -17,7 +17,14 @@ public class _206_反转链表 {
     // 迭代反转
     public ListNode reverseList1(ListNode head) {
         if (head == null || head.next == null) return head;
-        return null;
+        ListNode newHead = null;
+        while (head != null) {
+            ListNode tempNode = head.next;
+            head.next = newHead;
+            newHead = head;
+            head = tempNode;
+        }
+        return newHead;
     }
 
     public static void main(String[] args) {
@@ -27,6 +34,6 @@ public class _206_反转链表 {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
         _206_反转链表 o = new _206_反转链表();
-        System.out.println(o.reverseList(head));
+        System.out.println(o.reverseList1(head));
     }
 }
