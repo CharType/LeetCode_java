@@ -98,8 +98,19 @@ public class LinkedList<E> extends AbstractList<E> {
     public E remove(int index) {
         rangeCheck(index);
         Node<E> node = node(index);
-        node.prev.next = node.next;
-        node.next.prev = node.prev;
+        Node<E> prev = node.prev;
+        Node<E> next = node.next;
+        if (prev == null) {
+            first = node.next;
+        } else {
+            node.prev.next = node.next;
+        }
+        if (next == null) {
+            last = prev;
+        } else {
+            next.prev = prev;
+        }
+
         size--;
         return node.element;
     }
