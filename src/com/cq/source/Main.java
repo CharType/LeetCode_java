@@ -3,6 +3,7 @@ package com.cq.source;
 //import java.util.LinkedList;
 //import java.util.List;
 
+import com.cq.source.single.SingleLinkList;
 import com.tools.Asserts;
 
 public class Main {
@@ -34,8 +35,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        testList(new LinkedList<>());
-
+        //testList(new LinkedList<>());
+        testList(new SingleLinkList<>());
 //        List<Integer> list = new LinkedList<>();
 //        for (int i = 0; i < 10; i++) {
 //            list.add(i);
