@@ -40,8 +40,16 @@ public class Main {
 //        testList(new SingleLinkList<>());
 //        testList(new SingleCircleLinkList<>());
 //        testList(new CircleLinkedList<>());
+        
         System.out.println(123);
 
+
+    }
+
+    /**
+     * 约瑟夫问题
+     */
+    public static void josephusProblem() {
 
     }
 }
