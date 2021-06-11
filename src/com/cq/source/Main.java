@@ -3,6 +3,7 @@ package com.cq.source;
 //import java.util.LinkedList;
 //import java.util.List;
 
+import com.cq.source.circle.EnhanceSingleCircleLinkList;
 import com.tools.Asserts;
 
 public class Main {
@@ -40,16 +41,30 @@ public class Main {
 //        testList(new SingleLinkList<>());
 //        testList(new SingleCircleLinkList<>());
 //        testList(new CircleLinkedList<>());
-        
-        System.out.println(123);
+//        testList(new EnhanceSingleCircleLinkList<>());
 
+//        System.out.println(123);
 
+        josephusProblem();
     }
 
     /**
      * 约瑟夫问题
      */
     public static void josephusProblem() {
+        EnhanceSingleCircleLinkList<Integer> list = new EnhanceSingleCircleLinkList<>();
+        for (int i = 1; i <= 8; i++) {
+            list.add(i);
+        }
+        System.out.println(list);
+
+        list.reset();
+        while (list.isEmpty() == false) {
+            list.next();
+            list.next();
+            System.out.println("第" + list.remove() + "个人被杀死了");
+            System.out.println("还有" + list.size() + "个元素");
+        }
 
     }
 }
