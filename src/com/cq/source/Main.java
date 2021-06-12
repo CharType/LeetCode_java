@@ -25,8 +25,8 @@ public class Main {
         list.remove(list.size() - 1); // [11, 66, 33, 44]
 
 
-        Asserts.test(list.indexof(44) == 3);
-        Asserts.test(list.indexof(22) == List.ELEMENT_NOT_FOUND);
+        Asserts.test(list.indexOf(44) == 3);
+        Asserts.test(list.indexOf(22) == List.ELEMENT_NOT_FOUND);
         Asserts.test(list.contains(33));
         Asserts.test(list.get(0) == 11);
         Asserts.test(list.get(1) == 66);

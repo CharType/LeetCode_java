@@ -140,7 +140,7 @@ public class CircleLinkedList<E> extends AbstractList<E> {
      * @return
      */
     @Override
-    public int indexof(E element) {
+    public int indexOf(E element) {
         Node node = first;
         int index = 0;
         while (node != null) {

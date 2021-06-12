@@ -70,5 +70,5 @@ public interface List<E> {
      * @param element
      * @return
      */
-    int indexof(E element);
+    int indexOf(E element);
 }

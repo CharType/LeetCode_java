@@ -34,7 +34,7 @@ public abstract class AbstractList<E> implements List<E> {
      */
     @Override
     public boolean contains(E element) {
-        return indexof(element) != ELEMENT_NOT_FOUND;
+        return indexOf(element) != ELEMENT_NOT_FOUND;
     }
 
     /**

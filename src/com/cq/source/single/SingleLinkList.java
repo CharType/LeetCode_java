@@ -69,7 +69,7 @@ public class SingleLinkList<E> extends AbstractList<E> {
     }
 
     @Override
-    public int indexof(E element) {
+    public int indexOf(E element) {
         Node<E> tempNode = first;
         int index = ELEMENT_NOT_FOUND;
         while (tempNode != null) {

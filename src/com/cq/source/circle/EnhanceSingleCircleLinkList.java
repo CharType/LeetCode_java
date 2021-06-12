@@ -47,7 +47,7 @@ public class EnhanceSingleCircleLinkList<E> extends AbstractList<E> {
             last.next = first;
             size--;
         } else {
-            Node<E> prev = node(indexof(node.element) - 1);
+            Node<E> prev = node(indexOf(node.element) - 1);
             prev.next = node.next;
             size--;
         }
@@ -107,7 +107,7 @@ public class EnhanceSingleCircleLinkList<E> extends AbstractList<E> {
     }
 
     @Override
-    public int indexof(E element) {
+    public int indexOf(E element) {
         Node<E> tempNode = first;
         int index = ELEMENT_NOT_FOUND;
         while (tempNode != null) {
