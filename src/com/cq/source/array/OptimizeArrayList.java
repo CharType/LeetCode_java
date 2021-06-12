@@ -2,7 +2,7 @@ package com.cq.source.array;
 
 import com.cq.source.AbstractList;
 
-public class ArrayList<E> extends AbstractList<E> {
+public class OptimizeArrayList<E> extends AbstractList<E> {
     // 默认容量
     private static final int DEFAULT_CAPACITY = 10;
     // 存储所有的元素
@@ -11,11 +11,11 @@ public class ArrayList<E> extends AbstractList<E> {
     // 记录挪动数据次数
     private int moveCount = 0;
 
-    public ArrayList() {
+    public OptimizeArrayList() {
         this(DEFAULT_CAPACITY);
     }
 
-    public ArrayList(int capacity) {
+    public OptimizeArrayList(int capacity) {
         capacity = (capacity < DEFAULT_CAPACITY) ? DEFAULT_CAPACITY : capacity;
         this.elements = (E[]) new Object[capacity];
     }

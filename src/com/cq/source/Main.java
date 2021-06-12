@@ -36,6 +36,21 @@ public class Main {
 
     }
 
+    public static void testArrayList() {
+        ArrayList<Integer> array = new ArrayList<>(10);
+        for (int i = 0; i < 100; i++) {
+            array.add(0, i);
+        }
+
+        System.out.println(array);
+
+
+        for (int i = 99; i >= 0; i--) {
+            array.remove(0);
+        }
+        System.out.println(array);
+    }
+
     public static void main(String[] args) {
 
         //testList(new LinkedList<>());
@@ -47,21 +62,8 @@ public class Main {
 //        testList(new ArrayList<>());
 //        System.out.println(123);
 
-        ArrayList<Integer> array = new ArrayList<>(10);
-        for (int i = 0; i < 100; i++) {
-            array.add(i);
-        }
+        testArrayList();
 
-        System.out.println(array);
-
-        array.clear();
-//        array.clear();
-//        for (int i = 99; i >= 0; i--) {
-//            if (i % 2 == 0) {
-//            array.remove(i);
-//            }
-//        }
-        System.out.println(array);
 
 //        josephusProblem();
     }
