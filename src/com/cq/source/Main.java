@@ -3,7 +3,7 @@ package com.cq.source;
 //import java.util.LinkedList;
 //import java.util.List;
 
-import com.cq.source.circle.EnhanceCircleLinkedList;
+import com.cq.source.array.ArrayList;
 import com.cq.source.circle.EnhanceSingleCircleLinkList;
 import com.tools.Asserts;
 
@@ -43,10 +43,25 @@ public class Main {
 //        testList(new SingleCircleLinkList<>());
 //        testList(new CircleLinkedList<>());
 //        testList(new EnhanceSingleCircleLinkList<>());
-        testList(new EnhanceCircleLinkedList<>());
+//        testList(new EnhanceCircleLinkedList<>());
+//        testList(new ArrayList<>());
 //        System.out.println(123);
 
-        josephusProblem();
+        ArrayList<Integer> array = new ArrayList<>(10);
+        for (int i = 0; i < 1000; i++) {
+            array.add(i);
+        }
+
+        System.out.println(array);
+
+        for (int i = 999; i > 0; i--) {
+            if (i % 2 == 0) {
+                array.remove(i);
+            }
+        }
+        System.out.println(array);
+
+//        josephusProblem();
     }
 
     /**
