@@ -48,17 +48,19 @@ public class Main {
 //        System.out.println(123);
 
         ArrayList<Integer> array = new ArrayList<>(10);
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             array.add(i);
         }
 
         System.out.println(array);
 
-        for (int i = 999; i > 0; i--) {
-            if (i % 2 == 0) {
-                array.remove(i);
-            }
-        }
+        array.clear();
+//        array.clear();
+//        for (int i = 99; i >= 0; i--) {
+//            if (i % 2 == 0) {
+//            array.remove(i);
+//            }
+//        }
         System.out.println(array);
 
 //        josephusProblem();

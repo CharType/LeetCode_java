@@ -22,6 +22,7 @@ public class ArrayList<E> extends AbstractList<E> {
         // 清空还是创建一块新的内存？
         this.elements = (E[]) new Object[this.elements.length];
         size = 0;
+        trimCapacityCheck();
     }
 
     @Override
@@ -66,6 +67,32 @@ public class ArrayList<E> extends AbstractList<E> {
         System.out.println(oldCapacity + "扩容为" + newCapacity);
     }
 
+    private void trimCapacityCheck() {
+        // 缩容设计
+        int oldCapacity = elements.length;
+        // 如果size == 0 直接给默认容量
+        if (size == 0 && elements.length > DEFAULT_CAPACITY) {
+            System.out.println("size =" + size + "容量：" + oldCapacity + "缩容为：" + DEFAULT_CAPACITY);
+            elements = (E[]) new Object[DEFAULT_CAPACITY];
+            return;
+        }
+        // 如果size 大于容量的一半，不需要缩容
+        if (size > (oldCapacity >> 1)) return;
+        // 新的容量等于size的1。5倍
+        int newCapacity = ((size >> 1) + size);
+        // 如果计算出新的容量,取默认容量
+        newCapacity = (newCapacity < DEFAULT_CAPACITY) ? DEFAULT_CAPACITY : newCapacity;
+        // 如果计算出的新的容量和之前的容量相等，取消缩容
+        if (newCapacity == oldCapacity) return;
+        // 申请新的内存，缩容
+        E[] newElements = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newElements[i] = elements[i];
+        }
+        elements = newElements;
+        System.out.println("size =" + size + "容量：" + oldCapacity + "缩容为：" + newCapacity);
+    }
+
     @Override
     public E remove(int index) {
         rangeCheck(index);
@@ -75,6 +102,7 @@ public class ArrayList<E> extends AbstractList<E> {
         }
         size--;
         elements[size] = null;
+        trimCapacityCheck();
         return oldElement;
     }
 
