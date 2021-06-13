@@ -1,8 +1,64 @@
-package com.cq.source;
+package com.cq.source.list.circle;
 
-public class LinkedList<E> extends AbstractList<E> {
+import com.cq.source.list.AbstractList;
+
+/**
+ * 增强型实现双向循环链表
+ * 添加current 用于指向一个当前节点
+ * reset方法 让current指向头结点
+ * next 方法 让current指向下一个节点
+ * remove方法，删除current指向的节点 current指向下一个节点
+ */
+public class EnhanceCircleLinkedList<E> extends AbstractList<E> {
     private Node<E> first;
     private Node<E> last;
+    // 用于指向某一个节点
+    private Node<E> current;
+
+    // 将current 指针重置到first节点
+    public void reset() {
+        current = first;
+    }
+
+    // 让current往后走一步
+    public E next() {
+        E oldelement = current.element;
+        current = current.next;
+        return oldelement;
+    }
+
+    public E remove() {
+        E oldement = current.element;
+        remove(current);
+        next();
+        return oldement;
+    }
+
+    private E remove(Node<E> node) {
+        Node<E> prev = node.prev;
+        Node<E> next = node.next;
+        if (size == 1) {
+            clear();
+            return node.element;
+        } else if (node == last) {
+            // 删除最后一个元素
+            prev.next = next;
+            next.prev = prev;
+            last = prev;
+        } else if (node == first) {
+            // 删除的是第一个元素
+            prev.next = next;
+            next.prev = prev;
+            first = next;
+        } else {
+            // 删除的是中间的元素
+            prev.next = next;
+            next.prev = prev;
+        }
+
+        size--;
+        return node.element;
+    }
 
     /**
      * 清空链表
@@ -12,6 +68,7 @@ public class LinkedList<E> extends AbstractList<E> {
         size = 0;
         first = null;
         last = null;
+        current = null;
     }
 
     /**
@@ -63,15 +120,24 @@ public class LinkedList<E> extends AbstractList<E> {
         if (index == size) {
             // 往最后面添加
             Node oldLast = last;
-            Node<E> newNode = new Node<>(last, element, null);
+            Node<E> newNode = new Node<>(last, element, first);
             if (oldLast == null) {
                 // 第一次添加数据
                 first = newNode;
+                current = first;
+                newNode.next = newNode;
+                newNode.prev = newNode;
             } else {
                 last.next = newNode;
+                newNode.next = first;
+                first.prev = newNode;
             }
             last = newNode;
-
+        } else if (index == 0) {
+            Node<E> newNode = new Node<>(first.prev, element, first);
+            first.prev = newNode;
+            last.next = newNode;
+            first = newNode;
         } else {
             Node<E> next = node(index);
             Node<E> prev = next.prev;
@@ -81,9 +147,7 @@ public class LinkedList<E> extends AbstractList<E> {
             } else {
                 prev.next = node;
                 next.prev = node;
-
             }
-
         }
         size++;
     }
@@ -98,22 +162,9 @@ public class LinkedList<E> extends AbstractList<E> {
     public E remove(int index) {
         rangeCheck(index);
         Node<E> node = node(index);
-        Node<E> prev = node.prev;
-        Node<E> next = node.next;
-        if (prev == null) {
-            first = node.next;
-        } else {
-            node.prev.next = node.next;
-        }
-        if (next == null) {
-            last = prev;
-        } else {
-            next.prev = prev;
-        }
-
-        size--;
-        return node.element;
+        return remove(node);
     }
+
 
     /**
      * 获取指定元素的索引
@@ -127,14 +178,15 @@ public class LinkedList<E> extends AbstractList<E> {
         int index = 0;
         while (node != null) {
             if (node.element.equals(element)) {
-                break;
+                return index;
             }
             node = node.next;
             index++;
+            if (index >= size) {
+                break;
+            }
         }
-        if (index < size) {
-            return index;
-        }
+
         return ELEMENT_NOT_FOUND;
     }
 
@@ -166,10 +218,13 @@ public class LinkedList<E> extends AbstractList<E> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append('[');
+        sb.append("size=").append(size).append(", [");
         Node node = first;
-        while (node != null) {
-            sb.append(' ' + node.element.toString() + ' ');
+        for (int i = 0; i < size; i++) {
+            if (i != 0) {
+                sb.append(", ");
+            }
+            sb.append(node);
             node = node.next;
         }
         sb.append(']');

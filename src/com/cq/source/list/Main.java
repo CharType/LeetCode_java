@@ -1,10 +1,10 @@
-package com.cq.source;
+package com.cq.source.list;
 
 //import java.util.LinkedList;
 //import java.util.List;
 
-import com.cq.source.array.ArrayList;
-import com.cq.source.circle.EnhanceSingleCircleLinkList;
+import com.cq.source.list.array.ArrayList;
+import com.cq.source.list.circle.EnhanceSingleCircleLinkList;
 import com.tools.Asserts;
 
 public class Main {

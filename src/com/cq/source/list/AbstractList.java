@@ -1,4 +1,4 @@
-package com.cq.source;
+package com.cq.source.list;
 
 public abstract class AbstractList<E> implements List<E> {
     /**

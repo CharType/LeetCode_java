@@ -1,6 +1,6 @@
-package com.cq.source.single;
+package com.cq.source.list.single;
 
-import com.cq.source.AbstractList;
+import com.cq.source.list.AbstractList;
 
 public class SingleLinkList<E> extends AbstractList<E> {
     Node<E> first;

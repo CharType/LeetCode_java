@@ -1,6 +1,6 @@
-package com.cq.source.circle;
+package com.cq.source.list.circle;
 
-import com.cq.source.AbstractList;
+import com.cq.source.list.AbstractList;
 
 /**
  * 双向循环链表

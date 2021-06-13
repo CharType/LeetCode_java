@@ -1,6 +1,6 @@
-package com.cq.source.array;
+package com.cq.source.list.array;
 
-import com.cq.source.AbstractList;
+import com.cq.source.list.AbstractList;
 
 public class OptimizeArrayList<E> extends AbstractList<E> {
     // 默认容量
