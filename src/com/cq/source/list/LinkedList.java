@@ -80,10 +80,8 @@ public class LinkedList<E> extends AbstractList<E> {
                 first = node;
             } else {
                 prev.next = node;
-                next.prev = node;
-
             }
-
+            next.prev = node;
         }
         size++;
     }

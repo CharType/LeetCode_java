@@ -53,7 +53,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //testList(new LinkedList<>());
+        testList(new LinkedList<>());
 //        testList(new SingleLinkList<>());
 //        testList(new SingleCircleLinkList<>());
 //        testList(new CircleLinkedList<>());
@@ -62,7 +62,7 @@ public class Main {
 //        testList(new ArrayList<>());
 //        System.out.println(123);
 
-        testArrayList();
+//        testArrayList();
 
 
 //        josephusProblem();
