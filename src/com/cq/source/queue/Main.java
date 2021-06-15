@@ -1,10 +1,21 @@
 package com.cq.source.queue;
 
+import com.cq.source.queue.circle.CircleQueue;
+
 public class Main {
     public static void main(String[] args) {
-        testDeQue();
+        testCircleQueue();
     }
 
+    public static void testCircleQueue() {
+        CircleQueue<Integer> queue = new CircleQueue();
+        for (int i = 0; i < 5; i++) {
+            queue.enQueue(i + 10);
+        }
+        while (!queue.isEmpty()) {
+            System.out.println(queue.deQueue());
+        }
+    }
 
     public static void testDeQue() {
         Deque<Integer> deque = new Deque<>();
