@@ -1,11 +1,11 @@
 package com.cq.source.queue.circle;
 
 /**
- * 循环队列
+ * 循环双端队列
  *
  * @param
  */
-public class CircleQueue<E> {
+public class CircleDeque<E> {
     // 记录头元素的索引
     private int front;
     // 元素数量
@@ -15,7 +15,7 @@ public class CircleQueue<E> {
     // 默认容量
     private static final int DEFAULT_CAPACITY = 10;
 
-    public CircleQueue() {
+    public CircleDeque() {
         this.elements = (E[]) new Object[DEFAULT_CAPACITY];
     }
 

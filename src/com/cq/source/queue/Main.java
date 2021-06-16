@@ -9,12 +9,16 @@ public class Main {
 
     public static void testCircleQueue() {
         CircleQueue<Integer> queue = new CircleQueue();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 15; i++) {
             queue.enQueue(i + 10);
+            if (i > 10) {
+                queue.deQueue();
+            }
         }
-        while (!queue.isEmpty()) {
-            System.out.println(queue.deQueue());
-        }
+        System.out.println(queue);
+//        while (!queue.isEmpty()) {
+//            System.out.println(queue.deQueue());
+//        }
     }
 
     public static void testDeQue() {
