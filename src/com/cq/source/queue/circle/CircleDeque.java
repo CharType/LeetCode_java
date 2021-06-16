@@ -42,9 +42,8 @@ public class CircleDeque<E> {
 
     // 从队尾部出队
     public E deQueueRear() {
-        E oldemelent = elements[index(front)];
-        elements[index(front)] = null;
-        front = index(1);
+        E oldemelent = elements[index(size)];
+        elements[index(size)] = null;
         size--;
         return oldemelent;
     }
@@ -52,7 +51,8 @@ public class CircleDeque<E> {
     // 从队头入队
     public void enQueueFront(E element) {
         ensureCapacity(size + 1);
-        elements[index(size)] = element;
+        front = index(-1);
+        elements[front] = element;
         size++;
     }
 
@@ -67,12 +67,12 @@ public class CircleDeque<E> {
 
     // 获取队列头元素
     public E front() {
-        return null;
+        return elements[index(front)];
     }
 
     // 获取队尾部顶元素
     public E rear() {
-        return elements[index(front)];
+        return elements[index(size - 1)];
     }
 
     // 保证要有 capacity 个容量
@@ -90,9 +90,10 @@ public class CircleDeque<E> {
 
     private int index(int index) {
         index += front;
-        index = index % elements.length;
-        System.out.println("计算出index=" + index);
-        return index;
+        if (index < 0) {
+            return index + elements.length;
+        }
+        return index - (index >= elements.length ? elements.length : 0);
     }
 
     @Override

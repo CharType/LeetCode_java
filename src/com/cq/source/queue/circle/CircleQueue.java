@@ -70,7 +70,6 @@ public class CircleQueue<E> {
     private int index(int index) {
         index += front;
         index = index % elements.length;
-        System.out.println("计算出index=" + index);
         return index;
     }
 
