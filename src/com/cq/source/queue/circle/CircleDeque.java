@@ -33,20 +33,46 @@ public class CircleDeque<E> {
         front = 0;
     }
 
-    // 入队
-    public void enQueue(E element) {
+    // 从队尾部入队
+    public void enQueueRear(E element) {
         ensureCapacity(size + 1);
         elements[index(size)] = element;
         size++;
     }
 
-    // 出队
-    public E deQueue() {
+    // 从队尾部出队
+    public E deQueueRear() {
         E oldemelent = elements[index(front)];
         elements[index(front)] = null;
         front = index(1);
         size--;
         return oldemelent;
+    }
+
+    // 从队头入队
+    public void enQueueFront(E element) {
+        ensureCapacity(size + 1);
+        elements[index(size)] = element;
+        size++;
+    }
+
+    // 从队头部出队
+    public E deQueueFront() {
+        E oldemelent = elements[index(front)];
+        elements[index(front)] = null;
+        front = index(1);
+        size--;
+        return oldemelent;
+    }
+
+    // 获取队列头元素
+    public E front() {
+        return null;
+    }
+
+    // 获取队尾部顶元素
+    public E rear() {
+        return elements[index(front)];
     }
 
     // 保证要有 capacity 个容量
@@ -60,11 +86,6 @@ public class CircleDeque<E> {
         }
         elements = newElements;
         front = 0;
-    }
-
-    // 获取队顶元素
-    public E front() {
-        return elements[index(front)];
     }
 
     private int index(int index) {
