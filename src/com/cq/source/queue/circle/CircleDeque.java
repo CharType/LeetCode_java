@@ -100,9 +100,10 @@ public class CircleDeque<E> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("size=" + size).append(",").append("front=" + front).append("  [");
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < elements.length; i++) {
             sb.append(elements[index(i)]);
-            if (i < size - 1) {
+
+            if (i < elements.length - 1) {
                 sb.append(" ,");
             }
         }

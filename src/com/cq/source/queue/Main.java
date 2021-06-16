@@ -18,6 +18,11 @@ public class Main {
             System.out.println(queue);
         }
 
+        while (!queue.isEmpty()) {
+            System.out.println(queue);
+            System.out.println(queue.deQueueFront());
+        }
+
     }
 
     public static void testCircleQueue() {
