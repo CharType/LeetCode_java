@@ -1,13 +1,15 @@
 package com.cq.source.search.tree;
 
 import com.TreeNode.printer.BinaryTrees;
+import com.cq.source.search.tree.BinarySearchTree.Visitor;
 import com.tools.Integers;
 
 public class Main {
     public static void main(String[] args) {
 
-//        preorder();
-        inOrder();
+        preorder();
+//        inOrder();
+//        postOrder();
     }
 
     public static void levelOrder() {
@@ -34,6 +36,8 @@ public class Main {
         BinaryTrees.print(bst);
         System.out.println('\n');
         bst.postOrderTraversal();
+        System.out.println('\n');
+//        bst.postOrderTraversalStack();
     }
 
     public static void inOrder() {
@@ -54,7 +58,7 @@ public class Main {
     // 前序遍历
     public static void preorder() {
         BinarySearchTree bst = new BinarySearchTree();
-        Integer data[] = Integers.random(10, 0, 100);
+        Integer data[] = new Integer[]{7, 4, 9, 2, 5, 8, 11, 3, 12, 1};
         Integers.println(data);
         System.out.println('\n');
         for (int i = 0; i < data.length; i++) {
@@ -62,8 +66,23 @@ public class Main {
         }
         BinaryTrees.print(bst);
         System.out.println('\n');
-        bst.preorderTraversal();
+        bst.preorderTraversal(new Visitor<Integer>() {
+
+            @Override
+            public boolean visit(Integer element) {
+                System.out.println(element);
+                if (element == 1) return true;
+                return false;
+            }
+        });
         System.out.println('\n');
-        bst.preorderTraversalStack();
+        bst.preorderTraversalStack(new Visitor<Integer>() {
+            @Override
+            public boolean visit(Integer element) {
+                System.out.println(element);
+                if (element == 1) return true;
+                return false;
+            }
+        });
     }
 }

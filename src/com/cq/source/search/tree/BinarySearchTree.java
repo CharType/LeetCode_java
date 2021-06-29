@@ -97,13 +97,16 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
     //-----------------------遍历--------------------------------start
 
     // 使用迭代方式前序遍历
-    public void preorderTraversalStack() {
-        if (root == null) return;
+    public void preorderTraversalStack(Visitor visitor) {
+        if (root == null || visitor == null) return;
         Stack<Node<E>> stack = new Stack<>();
         stack.add(root);
         while (!stack.isEmpty()) {
             Node<E> node = stack.pop();
-            System.out.println(node.element);
+            visitor.stop = visitor.visit(node.element);
+            if (visitor.stop) {
+                break;
+            }
             if (node.right != null) {
                 stack.add(node.right);
             }
@@ -114,16 +117,17 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
         }
     }
 
-    public void preorderTraversal() {
-        preorder(root);
+    public void preorderTraversal(Visitor visitor) {
+        if (visitor == null) return;
+        preorder(root, visitor);
     }
 
     //前序遍历，先访问跟节点，然后左节点，右节点，
-    private void preorder(Node<E> node) {
-        if (node == null) return;
-        System.out.println(node.element);
-        preorder(node.left);
-        preorder(node.right);
+    private void preorder(Node<E> node, Visitor visitor) {
+        if (node == null || visitor.stop == true) return;
+        visitor.stop = visitor.visit(node.element);
+        preorder(node.left, visitor);
+        preorder(node.right, visitor);
     }
 
     public void inorderTraversalStack() {
@@ -160,6 +164,31 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
         inorder(node.right);
     }
 
+    // 后续遍历，非递归
+    //todo:待完善
+    public void postOrderTraversalStack() {
+        if (root == null) return;
+        Stack<Node<E>> stack = new Stack<>();
+        stack.add(root);
+        boolean lastIsLeaf = false;
+        while (!stack.isEmpty()) {
+            Node<E> node = stack.peek();
+            if (node.isLeaf() || lastIsLeaf) {
+                lastIsLeaf = true;
+                System.out.println(stack.pop().element);
+            } else {
+                lastIsLeaf = false;
+                if (node.right != null) {
+                    stack.add(node.right);
+                } else if (node.left != null) {
+                    stack.add(node.left);
+                } else {
+                    System.out.println(stack.pop().element);
+                }
+            }
+
+        }
+    }
 
     public void postOrderTraversal() {
         postOrder(root);
@@ -270,4 +299,11 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
         }
         return myNode.element + "_p(" + parentString + ")";
     }
+
+    public static abstract class Visitor<E> {
+        boolean stop = false;
+
+        public abstract boolean visit(E element);
+    }
 }
+
