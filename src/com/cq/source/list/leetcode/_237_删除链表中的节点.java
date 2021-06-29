@@ -1,4 +1,4 @@
-package com.cq.source.leetCode.link;
+package com.cq.source.list.leetcode;
 
 
 public class _237_删除链表中的节点 {

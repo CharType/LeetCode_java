@@ -1,4 +1,4 @@
-package com.cq.source.leetCode.link;
+package com.cq.source.list.leetcode;
 
 import com.linkList.ListNode;
 
