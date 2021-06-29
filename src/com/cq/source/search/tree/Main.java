@@ -1,7 +1,6 @@
 package com.cq.source.search.tree;
 
 import com.TreeNode.printer.BinaryTrees;
-import com.cq.source.search.tree.BinarySearchTree.Visitor;
 import com.tools.Integers;
 
 public class Main {
@@ -66,23 +65,26 @@ public class Main {
         }
         BinaryTrees.print(bst);
         System.out.println('\n');
-        bst.preorderTraversal(new Visitor<Integer>() {
 
-            @Override
-            public boolean visit(Integer element) {
-                System.out.println(element);
-                if (element == 1) return true;
-                return false;
-            }
-        });
-        System.out.println('\n');
-        bst.preorderTraversalStack(new Visitor<Integer>() {
-            @Override
-            public boolean visit(Integer element) {
-                System.out.println(element);
-                if (element == 1) return true;
-                return false;
-            }
-        });
+        System.out.println(bst);
+        return;
+//        bst.preorderTraversal(new Visitor<Integer>() {
+//
+//            @Override
+//            public boolean visit(Integer element) {
+//                System.out.println(element);
+//                if (element == 1) return true;
+//                return false;
+//            }
+//        });
+//        System.out.println('\n');
+//        bst.preorderTraversalStack(new Visitor<Integer>() {
+//            @Override
+//            public boolean visit(Integer element) {
+//                System.out.println(element);
+//                if (element == 1) return true;
+//                return false;
+//            }
+//        });
     }
 }
