@@ -255,6 +255,28 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
         }
     }
 
+    public boolean isComplete() {
+        if (root == null) return false;
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean islaef = false;
+        while (!queue.isEmpty()) {
+            Node<E> node = queue.poll();
+            if (islaef && !node.isLeaf()) return false;
+            if (node.left != null) {
+                queue.offer(node.left);
+            } else if (node.right != null) {
+                return false;
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+            } else {
+                islaef = true;
+            }
+        }
+        return true;
+    }
+
     public int height2() {
         if (root == null) return 0;
         Queue<Node<E>> queue = new LinkedList<>();
