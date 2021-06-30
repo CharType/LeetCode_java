@@ -6,8 +6,8 @@ import com.tools.Integers;
 public class Main {
     public static void main(String[] args) {
 
-        preorder();
-//        inOrder();
+//        preorder();
+        inOrder();
 //        postOrder();
     }
 
@@ -49,9 +49,13 @@ public class Main {
         }
         BinaryTrees.print(bst);
         System.out.println('\n');
-//        bst.inorderTraversal();
-//        System.out.println('\n');
+        bst.inorderTraversal();
+        System.out.println('\n');
         bst.inorderTraversalStack();
+        System.out.println('\n');
+        System.out.println("递归方式获取二叉树高度:" + bst.height());
+        System.out.println('\n');
+        System.out.println("层序遍历方式获取二叉树高度:" + bst.height2());
     }
 
     // 前序遍历

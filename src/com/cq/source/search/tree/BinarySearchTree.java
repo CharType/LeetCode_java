@@ -255,6 +255,38 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
         }
     }
 
+    public int height2() {
+        if (root == null) return 0;
+        Queue<Node<E>> queue = new LinkedList<>();
+        int height = 0;
+        int level = 1;
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            Node tempNode = queue.remove();
+            level--;
+            if (tempNode.left != null) {
+                queue.offer(tempNode.left);
+            }
+            if (tempNode.right != null) {
+                queue.offer(tempNode.right);
+            }
+            if (level == 0) {
+                height++;
+                level = queue.size();
+            }
+        }
+        return height;
+    }
+
+    public int height() {
+        return height(root);
+    }
+
+    private int height(Node<E> node) {
+        if (node == null) return 0;
+        return 1 + Math.max(height(node.left), height(node.right));
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
