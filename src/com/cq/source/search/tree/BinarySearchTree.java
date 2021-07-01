@@ -94,6 +94,44 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
 
     }
 
+    // 获取前驱节点
+    private Node<E> predecessor(Node<E> node) {
+        if (node == null) return null;
+        // 如果左子树不等于null，那么前驱节点一定在左子树中
+        Node<E> p = node.left;
+        if (p != null) {
+            while (p.right != null) {
+                p = p.right;
+            }
+            return p;
+        }
+
+        // 左子树等于空，那么前驱节点一定在父节点或者父节点之上
+        // node.parent == null 直接返回null
+        // node == node.parent.right 找到右节点
+        while (node.parent != null && node == node.parent.left) {
+            node = node.parent;
+        }
+        return node.parent;
+    }
+
+    // 获取后继节点
+    private Node<E> successor(Node<E> node) {
+        if (node == null) return null;
+        Node<E> p = node.right;
+        if (p != null) {
+            while (p.left != null) {
+                p = p.left;
+            }
+            return p;
+        }
+
+        while (node.parent != null && node == node.parent.right) {
+            node = node.parent;
+        }
+        return node.parent;
+    }
+
     //-----------------------遍历--------------------------------start
 
     // 使用迭代方式前序遍历

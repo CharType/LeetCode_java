@@ -1,6 +1,7 @@
 package com.cq.source.search.tree.leetcode;
 
 import com.TreeNode.TreeNode;
+import com.TreeNode.printer.BinaryTrees;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,30 +32,21 @@ public class _144_二叉树的前序遍历 {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;
         Stack<TreeNode> stack = new Stack<>();
-        TreeNode node = root;
-
-        while (node != null || !stack.isEmpty()) {
-
-            if (node != null) {
-                stack.add(node);
-                node = node.left;
-            } else {
-
-                if (stack.isEmpty()) {
-                    return list;
-                } else {
-                    node = stack.pop();
-                    list.add(node.val);
-                    node = node.right;
-                }
+        stack.add(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            list.add(node.val);
+            if (node.right != null) {
+                stack.add(node.right);
             }
+            if (node.left != null) {
+                stack.add(node.left);
 
+            }
 
         }
 
         return list;
-
-
     }
 
     public static void main(String[] args) {
@@ -67,6 +59,8 @@ public class _144_二叉树的前序遍历 {
 
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
+        BinaryTrees.print(root);
+        System.out.println('\n');
         System.out.println(o.preorderTraversalStack(root));
         System.out.println(o.preorderTraversal(root));
     }
