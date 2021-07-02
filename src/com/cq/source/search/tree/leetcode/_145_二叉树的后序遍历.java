@@ -15,12 +15,13 @@ public class _145_二叉树的后序遍历 {
     //迭代
     public List<Integer> postorderTraversalStack(TreeNode root) {
         List<Integer> list = new ArrayList<>();
+        if (root == null) return list;
         Stack<TreeNode> stack = new Stack<>();
         stack.add(root);
         TreeNode oldNode = null;
         while (!stack.isEmpty()) {
             TreeNode node = stack.peek();
-            if ((node.left == null && node.right == null) || node.left == oldNode || node.right == oldNode) {
+            if ((node.left == null && node.right == null) || (oldNode != null && (node.left == oldNode || node.right == oldNode))) {
                 oldNode = stack.pop();
                 list.add(oldNode.val);
             } else {
@@ -52,17 +53,17 @@ public class _145_二叉树的后序遍历 {
     public static void main(String[] args) {
         _145_二叉树的后序遍历 o = new _145_二叉树的后序遍历();
         TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(5);
-        root.left.left = new TreeNode(3);
-        root.left.right = new TreeNode(4);
+//        root.left = new TreeNode(2);
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(3);
+//        root.left.right = new TreeNode(4);
 
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
+//        root.right.left = new TreeNode(6);
+//        root.right.right = new TreeNode(7);
         BinaryTrees.print(root);
         System.out.println('\n');
-        System.out.println(o.postorderTraversal(root));
-        System.out.println('\n');
+//        System.out.println(o.postorderTraversal(root));
+//        System.out.println('\n');
         System.out.println(o.postorderTraversalStack(root));
     }
 
