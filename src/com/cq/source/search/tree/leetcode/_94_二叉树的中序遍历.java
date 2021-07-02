@@ -5,11 +5,35 @@ import com.TreeNode.printer.BinaryTrees;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
  */
 public class _94_二叉树的中序遍历 {
+    public List<Integer> inorderTraversalStack(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) return list;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        while (node != null || !stack.isEmpty()) {
+            if (node != null) {
+                stack.add(node);
+                node = node.left;
+            } else {
+                if (stack.isEmpty()) {
+                    return list;
+                } else {
+                    TreeNode tempNode = stack.pop();
+                    list.add(tempNode.val);
+                    node = tempNode.right;
+                }
+            }
+
+        }
+        return list;
+    }
+
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         inorderTraversal(root, list);
@@ -37,6 +61,6 @@ public class _94_二叉树的中序遍历 {
         System.out.println('\n');
         System.out.println(o.inorderTraversal(root));
         System.out.println('\n');
-//        System.out.println(o.postorderTraversalStack(root));
+        System.out.println(o.inorderTraversalStack(root));
     }
 }
