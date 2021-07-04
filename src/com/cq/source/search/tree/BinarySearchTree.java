@@ -89,9 +89,35 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
         size--;
         // 是否是度为2的节点
         if (node.hasTwoChildren()) {
-            // 找到后继节点
+            // 找到前驱节点
+            Node<E> s = predecessor(node);
+            node.element = s.element;
+            node = s;
         }
 
+        // 删除node
+        Node<E> replacement = node.left != null ? node.left : node.right;
+        if (replacement != null) {
+            // 度为1的节点
+            replacement.parent = node.parent;
+            if (node.parent == null) {
+                root = replacement;
+            } else if (node == node.parent.left) {
+                node.parent.left = replacement;
+            } else {
+                node.parent.right = replacement;
+            }
+        } else if (node.parent == null) {
+            // node是叶子节点，并且是根节点是根节点
+            root = null;
+        } else {
+            // 是度为0的节点
+            if (node == node.parent.right) {
+                node.parent.right = null;
+            } else {
+                node.parent.left = null;
+            }
+        }
     }
 
     // 获取前驱节点

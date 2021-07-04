@@ -6,9 +6,47 @@ import com.tools.Integers;
 public class Main {
     public static void main(String[] args) {
 
+        test2();
 //        preorder();
-        inOrder();
+//        inOrder();
 //        postOrder();
+    }
+
+    public static void test2() {
+        // 删除度为2 的节点
+        Integer data[] = new Integer[]{
+                7, 4, 9, 2, 5, 8, 11, 3, 12, 1
+        };
+
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+        for (int i = 0; i < data.length; i++) {
+            bst.add(data[i]);
+        }
+
+        BinaryTrees.println(bst);
+
+        bst.remove(2);
+
+        BinaryTrees.println(bst);
+    }
+
+
+    public static void test1() {
+        // 删除根节点
+        Integer data[] = new Integer[]{
+                7, 4, 9, 2, 5, 8, 11, 3, 12, 1
+        };
+
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+        for (int i = 0; i < data.length; i++) {
+            bst.add(data[i]);
+        }
+
+        BinaryTrees.println(bst);
+
+        bst.remove(7);
+
+        BinaryTrees.println(bst);
     }
 
     public static void levelOrder() {
