@@ -6,10 +6,10 @@ import com.tools.Integers;
 public class Main {
     public static void main(String[] args) {
 
-        test2();
-//        preorder();
-//        inOrder();
-//        postOrder();
+//        test2();
+        preorder();
+        inOrder();
+        postOrder();
     }
 
     public static void test2() {

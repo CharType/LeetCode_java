@@ -11,7 +11,20 @@ import java.util.Stack;
  * https://leetcode-cn.com/problems/validate-binary-search-tree/
  */
 public class _98_验证二叉搜索树 {
+    // 递归解法
+    long pre = Long.MIN_VALUE;
+
     public boolean isValidBST(TreeNode root) {
+        if (root == null) return true;
+        // 访问左子树，如果左子树验证不合法 
+        if (!isValidBST(root.left)) return false;
+
+        if (root.val <= pre) return false;
+        pre = root.val;
+        return isValidBST(root.right);
+    }
+
+    public boolean isValidBSTStack(TreeNode root) {
         if (root == null) return false;
         Stack<TreeNode> stack = new Stack<>();
         List<Integer> list = new ArrayList<>();
