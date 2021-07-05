@@ -8,7 +8,7 @@ import com.TreeNode.TreeNode;
 public class _235_二叉搜索树的最近公共祖先 {
     //todo:未完成
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null) return null;
+        if (root == null || p == root || q == root) return root;
         TreeNode leftNode = lowestCommonAncestor(root.left, p, q);
         TreeNode rightNode = lowestCommonAncestor(root.right, p, q);
         if (leftNode != null && rightNode != null) return root;
