@@ -1,6 +1,5 @@
-package com.sort;
+package com.cq.source.sort;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class HeapSort<T extends Comparable<T>> extends Sort<T> {
@@ -19,8 +18,8 @@ public class HeapSort<T extends Comparable<T>> extends Sort<T> {
         }
     }
 
-    private  void heapify() {
-        for (int i = 0;i < array.length;i++) {
+    private void heapify() {
+        for (int i = 0; i < array.length; i++) {
             queue.add(array[i]);
         }
     }

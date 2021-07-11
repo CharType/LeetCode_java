@@ -1,4 +1,4 @@
-package com.sort;
+package com.cq.source.sort.leetcode;
 
 import com.tools.Integers;
 
@@ -11,10 +11,10 @@ public class _88_合并两个有序数组 {
         int nIndex = n - 1;
         int currentIndex = nums1.length - 1;
         while (nIndex >= 0) {
-            if (mIndex >=0 && nums1[mIndex] > nums2[nIndex]) {
+            if (mIndex >= 0 && nums1[mIndex] > nums2[nIndex]) {
                 nums1[currentIndex] = nums1[mIndex];
                 mIndex--;
-            } else  {
+            } else {
                 nums1[currentIndex] = nums2[nIndex];
                 nIndex--;
             }
@@ -24,9 +24,9 @@ public class _88_合并两个有序数组 {
 
     public static void main(String[] args) {
         _88_合并两个有序数组 o = new _88_合并两个有序数组();
-        int [] nums1 = {1,2,3,0,0,0};
-        int [] nums2 = {2,5,6};
-        o.merge(nums1,3,nums2,3);
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
+        o.merge(nums1, 3, nums2, 3);
         Integers.println(nums1);
     }
 }

@@ -1,4 +1,4 @@
-package com.sort;
+package com.cq.source.sort.leetcode;
 
 
 import java.util.Arrays;
@@ -14,7 +14,7 @@ public class _164_最大间距 {
 
         int maxValue = 0;
         Arrays.sort(nums);
-        for (int i = 1;i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             maxValue = Math.max(nums[i] - nums[i - 1], maxValue);
         }
         return maxValue;
@@ -24,7 +24,7 @@ public class _164_最大间距 {
         if (nums == null || nums.length <= 1) return 0;
         int maxValue = 0;
         Arrays.sort(nums);
-        for (int i = 1;i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             maxValue = Math.max(nums[i] - nums[i - 1], maxValue);
         }
         return maxValue;
@@ -32,6 +32,6 @@ public class _164_最大间距 {
 
     public static void main(String[] args) {
         _164_最大间距 o = new _164_最大间距();
-        int [] nums = {3,6,9,1};
+        int[] nums = {3, 6, 9, 1};
     }
 }

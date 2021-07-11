@@ -1,10 +1,10 @@
-package com.sort;
+package com.cq.source.sort;
 
 import java.text.DecimalFormat;
 
 @SuppressWarnings("unchecked")
 public abstract class Sort<T extends Comparable<T>> implements Comparable<Sort<T>> {
-    protected T [] array;
+    protected T[] array;
     //比较次数
     private int cmpCount;
     // 交换次数
@@ -12,7 +12,7 @@ public abstract class Sort<T extends Comparable<T>> implements Comparable<Sort<T
     private long time;
     private DecimalFormat fmt = new DecimalFormat("#.00");
 
-    public void sort(T [] array) {
+    public void sort(T[] array) {
         if (array == null || array.length < 2) return;
         this.array = array;
         long begin = System.currentTimeMillis();
@@ -24,7 +24,7 @@ public abstract class Sort<T extends Comparable<T>> implements Comparable<Sort<T
 
     @Override
     public int compareTo(Sort<T> o) {
-        int result = (int)(time - o.time);
+        int result = (int) (time - o.time);
         if (result != 0) return result;
         result = cmpCount - o.cmpCount;
         if (result != 0) return result;
