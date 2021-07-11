@@ -5,8 +5,8 @@ import com.tools.Integers;
 
 public class MainTest {
     public static void main(String[] args) {
-//        Integer[] array = Integers.random(10000, 0, 10000);
-        Integer[] array = Integers.tailAscOrder(1, 10000, 1000);
+        Integer[] array = Integers.random(10000, 0, 10000);
+//        Integer[] array = Integers.tailAscOrder(1, 10000, 1000);
         tetsSort(array,
                 new BubbleSort1<Integer>(),
                 new BubbleSort2<Integer>(),
