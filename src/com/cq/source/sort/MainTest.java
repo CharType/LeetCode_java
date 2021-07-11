@@ -7,8 +7,8 @@ public class MainTest {
     public static void main(String[] args) {
         Integer[] array = Integers.random(10000, 0, 10000);
         tetsSort(array,
-                new BubbleSort1<Integer>()
-//                new BubbleSort2<Integer>(),
+                new BubbleSort1<Integer>(),
+                new BubbleSort2<Integer>()
 //                new BubbleSort3<Integer>(),
 //                new SelectionSort<Integer>(),
 //                new HeapSort<Integer>()
