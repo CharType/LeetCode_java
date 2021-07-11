@@ -7,13 +7,10 @@ public class HeapSort<T extends Comparable<T>> extends Sort<T> {
 
     @Override
     protected void sort() {
-        // 堆排序
         heapify();
-
         int index = array.length - 1;
         while (!queue.isEmpty()) {
-            array[index] = queue.poll();
-            queue.remove();
+            array[index] = queue.remove();
             index--;
         }
     }

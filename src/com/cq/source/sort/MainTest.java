@@ -10,9 +10,9 @@ public class MainTest {
         tetsSort(array,
                 new BubbleSort1<Integer>(),
                 new BubbleSort2<Integer>(),
-                new BubbleSort3<Integer>()
-//                new SelectionSort<Integer>(),
-//                new HeapSort<Integer>()
+                new BubbleSort3<Integer>(),
+                new SelectionSort<Integer>(),
+                new HeapSort<Integer>()
         );
 
     }
