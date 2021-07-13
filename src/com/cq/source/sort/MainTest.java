@@ -5,14 +5,17 @@ import com.tools.Integers;
 
 public class MainTest {
     public static void main(String[] args) {
-        Integer[] array = Integers.random(10000, 0, 10000);
+        Integer[] array = Integers.random(15000, 0, 15000);
 //        Integer[] array = Integers.tailAscOrder(1, 10000, 1000);
         tetsSort(array,
                 new BubbleSort1<Integer>(),
                 new BubbleSort2<Integer>(),
                 new BubbleSort3<Integer>(),
                 new SelectionSort<Integer>(),
-                new HeapSort<Integer>()
+                new SelectionSort1<Integer>(),
+                new HeapSort<Integer>(),
+                new InsertionSort<Integer>(),
+                new InsertionSort1<Integer>()
         );
 
     }
