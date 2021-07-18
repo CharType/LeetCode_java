@@ -17,7 +17,8 @@ public class MainTest {
                 new HeapSort<Integer>(),
                 new InsertionSort<Integer>(),
                 new InsertionSort2<Integer>(),
-                new InsertionSort3<Integer>()
+                new InsertionSort3<Integer>(),
+                new MergeSort<Integer>()
         );
 
     }
