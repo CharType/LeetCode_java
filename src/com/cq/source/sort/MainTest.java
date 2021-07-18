@@ -5,9 +5,9 @@ import com.tools.Integers;
 
 public class MainTest {
     public static void main(String[] args) {
-        Integer[] array = Integers.random(15000, 0, 15000);
+//        Integer[] array = Integers.random(300000, 0, 300000);
 //        Integer[] array = Integers.tailAscOrder(1, 10000, 1000);
-
+        Integer[] array = Integers.same(50000, 0);
         tetsSort(array,
                 new BubbleSort1<Integer>(),
                 new BubbleSort2<Integer>(),

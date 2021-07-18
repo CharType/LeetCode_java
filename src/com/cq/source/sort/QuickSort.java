@@ -13,10 +13,14 @@ public class QuickSort<T extends Comparable<T>> extends Sort<T> {
     }
 
     private int pivotIndex(int begin, int end) {
+
+        // 随机选择一个轴点元素和begin交换
+        int randomIndex = (int) (Math.random() * (end - begin)) + begin;
+        swap(begin, randomIndex);
+
         T v = array[begin];
         end--;
         while (begin < end) {
-
             while (begin < end) {
                 if (cmp(v, array[end]) < 0) {
                     // 右边元素 > 轴点元素
