@@ -1,19 +1,20 @@
-package com.cq.source.sort;
+package com.cq.source.sort.cmp;
 
-public class BubbleSort2<T extends Comparable<T>> extends Sort<T> {
+import com.cq.source.sort.Sort;
 
+public class BubbleSort3<T extends Comparable<T>> extends Sort<T> {
     @Override
     protected void sort() {
         // 冒泡排序实现
         for (int end = array.length - 1; end > 0; end--) {
-            boolean isSort = true;
+            int startIndex = 1;
             for (int begin = 1; begin <= end; begin++) {
                 if (cmp(begin, begin - 1) < 0) {
                     swap(begin, begin - 1);
-                    isSort = false;
+                    startIndex = begin;
                 }
             }
-            if (isSort) break;
+            end = startIndex;
         }
     }
 }

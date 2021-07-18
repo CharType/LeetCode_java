@@ -1,4 +1,4 @@
-package com.cq.source.sort;
+package com.cq.source.sort.cmp;
 
 public class BinarySearch {
     // 练习二分搜索

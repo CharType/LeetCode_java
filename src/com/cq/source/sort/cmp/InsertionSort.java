@@ -1,4 +1,6 @@
-package com.cq.source.sort;
+package com.cq.source.sort.cmp;
+
+import com.cq.source.sort.Sort;
 
 public class InsertionSort<T extends Comparable<T>> extends Sort<T> {
     @Override

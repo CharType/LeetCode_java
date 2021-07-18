@@ -1,9 +1,11 @@
-package com.cq.source.sort;
+package com.cq.source.sort.cmp;
 
-public class InsertionSort1<T extends Comparable<T>> extends Sort<T> {
+import com.cq.source.sort.Sort;
 
+public class InsertionSort2<T extends Comparable<T>> extends Sort<T> {
     @Override
     protected void sort() {
+        // 插入排序优化
         for (int begin = 1; begin < array.length; begin++) {
             int cur = begin;
             T v = array[cur];

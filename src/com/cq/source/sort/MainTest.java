@@ -1,5 +1,6 @@
 package com.cq.source.sort;
 
+import com.cq.source.sort.cmp.*;
 import com.tools.Asserts;
 import com.tools.Integers;
 

@@ -54,9 +54,9 @@ public abstract class Sort<T extends Comparable<T>> implements Comparable<Sort<T
         String timeStr = "耗时：" + (time / 1000.0) + "s(" + time + "ms)";
         String compareCountStr = "比较：" + numberString(cmpCount);
         String swapCountStr = "交换：" + numberString(swapCount);
-        String stableStr = "稳定性：" + isStable();
+//        String stableStr = "稳定性：" + isStable();
         return "【" + getClass().getSimpleName() + "】\n"
-                + stableStr + " \t"
+//                + stableStr + " \t"
                 + timeStr + " \t"
                 + compareCountStr + "\t "
                 + swapCountStr + "\n"

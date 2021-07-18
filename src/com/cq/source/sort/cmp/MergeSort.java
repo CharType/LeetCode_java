@@ -1,5 +1,7 @@
-package com.cq.source.sort;
+package com.cq.source.sort.cmp;
 
+
+import com.cq.source.sort.Sort;
 
 public class MergeSort<T extends Comparable<T>> extends Sort<T> {
     private T[] leftArray;
