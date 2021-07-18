@@ -9,16 +9,15 @@ public class MainTest {
 //        Integer[] array = Integers.tailAscOrder(1, 10000, 1000);
 
         tetsSort(array,
-//                new BubbleSort1<Integer>()
-//                new BubbleSort2<Integer>(),
-//                new BubbleSort3<Integer>()
-                new SelectionSort<Integer>()
-//                new SelectionSort1<Integer>(),
-//                new HeapSort<Integer>(),
-//                new InsertionSort<Integer>(),
-//                new InsertionSort1<Integer>(),
-//                new InsertionSort2<Integer>()
-//                new InsertionSort3<Integer>()
+                new BubbleSort1<Integer>(),
+                new BubbleSort2<Integer>(),
+                new BubbleSort3<Integer>(),
+                new SelectionSort<Integer>(),
+                new SelectionSort1<Integer>(),
+                new HeapSort<Integer>(),
+                new InsertionSort<Integer>(),
+                new InsertionSort2<Integer>(),
+                new InsertionSort3<Integer>()
         );
 
     }

@@ -10,7 +10,7 @@ public class HeapSort<T extends Comparable<T>> extends Sort<T> {
         heapify();
         int index = array.length - 1;
         while (!queue.isEmpty()) {
-            array[index] = queue.remove();
+            array[index] = queue.poll();
             index--;
         }
     }

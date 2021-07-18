@@ -118,8 +118,8 @@ public class Integers {
 
     public static boolean isDescOrder(Integer[] array) {
         if (array == null || array.length == 0) return false;
-        for (int i = array.length - 2; i > 0; i--) {
-            if (array[i + 1] < array[i]) return false;
+        for (int i = array.length - 1; i > 0; i--) {
+            if (array[i - 1] < array[i]) return false;
         }
         return true;
     }
