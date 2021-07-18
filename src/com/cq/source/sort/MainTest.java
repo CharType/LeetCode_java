@@ -5,7 +5,7 @@ import com.tools.Integers;
 
 public class MainTest {
     public static void main(String[] args) {
-        Integer[] array = Integers.random(10000, 0, 15000);
+        Integer[] array = Integers.random(15000, 0, 15000);
 //        Integer[] array = Integers.tailAscOrder(1, 10000, 1000);
 
         tetsSort(array,
@@ -18,7 +18,8 @@ public class MainTest {
                 new InsertionSort<Integer>(),
                 new InsertionSort2<Integer>(),
                 new InsertionSort3<Integer>(),
-                new MergeSort<Integer>()
+                new MergeSort<Integer>(),
+                new QuickSort<Integer>()
         );
 
     }
