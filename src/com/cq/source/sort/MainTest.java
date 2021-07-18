@@ -6,7 +6,7 @@ import com.tools.Integers;
 
 public class MainTest {
     public static void main(String[] args) {
-        Integer[] array = Integers.random(10000, 0, 10000);
+        Integer[] array = Integers.random(100000, 0, 1000000);
 //        Integer[] array = Integers.tailAscOrder(1, 10000, 1000);
 //        Integer[] array = Integers.same(50000, 0);
         tetsSort(array,
@@ -21,7 +21,9 @@ public class MainTest {
                 new InsertionSort3<Integer>(),
                 new MergeSort<Integer>(),
                 new QuickSort<Integer>(),
-                new ShellSort<Integer>()
+                new ShellSort<Integer>(),
+                new CountingSort(),
+                new CountingSort1()
         );
 
     }
