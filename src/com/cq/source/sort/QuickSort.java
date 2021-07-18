@@ -14,7 +14,7 @@ public class QuickSort<T extends Comparable<T>> extends Sort<T> {
 
     private int pivotIndex(int begin, int end) {
 
-        // 随机选择一个轴点元素和begin交换
+        // 随机选择一个轴点元素和begin交换 对于相同元素比较多的数组有明显的优化效果
         int randomIndex = (int) (Math.random() * (end - begin)) + begin;
         swap(begin, randomIndex);
 
