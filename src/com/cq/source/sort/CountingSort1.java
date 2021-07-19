@@ -31,7 +31,6 @@ public class CountingSort1 extends Sort<Integer> {
 
 
         // 从后往前遍历元素，将这个元素放到数组中台合适的位置
-        int index = 0;
         int[] newArray = new int[array.length];
         for (int i = array.length - 1; i >= 0; i--) {
             newArray[--couts[array[i] - min]] = array[i];
