@@ -7,7 +7,7 @@ package com.cq.source.剑指Offer第二版;
  * 链接：https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class 剑指Offer04_二维数组中的查找 {
+public class 剑指Offer_04_二维数组中的查找 {
 
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
 
@@ -58,7 +58,7 @@ public class 剑指Offer04_二维数组中的查找 {
 //        };
 
         int[][] matrix = {{1, 4, 7, 11, 15}, {2, 5, 8, 12, 19}, {3, 6, 9, 16, 22}, {10, 13, 14, 17, 24}, {18, 21, 23, 26, 30}};
-        剑指Offer04_二维数组中的查找 o = new 剑指Offer04_二维数组中的查找();
+        剑指Offer_04_二维数组中的查找 o = new 剑指Offer_04_二维数组中的查找();
         System.out.println(o.findNumberIn2DArray2(matrix, 5));
     }
 }

@@ -10,7 +10,7 @@ package com.cq.source.剑指Offer第二版;
  * <p>
  * 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
  */
-public class 剑指Offer10_I_斐波那契数列 {
+public class 剑指Offer_10_I_斐波那契数列 {
     public int fib(int n) {
         if (n == 0) return 0;
         if (n <= 2) return 1;

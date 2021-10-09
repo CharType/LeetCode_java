@@ -16,7 +16,7 @@ import java.util.Stack;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof
  */
-public class 剑指Offer07_重建二叉树 {
+public class 剑指Offer_07_重建二叉树 {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (preorder == null || preorder.length == 0 || inorder == null || inorder.length == 0) return null;
         TreeNode root = new TreeNode(preorder[0]);
@@ -42,7 +42,7 @@ public class 剑指Offer07_重建二叉树 {
     }
 
     public static void main(String[] args) {
-        剑指Offer07_重建二叉树 o = new 剑指Offer07_重建二叉树();
+        剑指Offer_07_重建二叉树 o = new 剑指Offer_07_重建二叉树();
         int[] preorder = {3, 9, 20, 15, 7}, inorder = {9, 3, 15, 20, 7};
         TreeNode root = o.buildTree(preorder, inorder);
         BinaryTrees.print(root);

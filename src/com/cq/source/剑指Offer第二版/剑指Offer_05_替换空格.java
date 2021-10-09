@@ -1,6 +1,6 @@
 package com.cq.source.剑指Offer第二版;
 
-public class 剑指_Offer_05_替换空格 {
+public class 剑指Offer_05_替换空格 {
 
     public String replaceSpace(String s) {
         if (s == null) return null;

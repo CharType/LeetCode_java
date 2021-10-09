@@ -5,7 +5,7 @@ import com.tools.Integers;
 
 import java.util.ArrayList;
 
-public class 剑指_Offer06_从尾到头打印链表 {
+public class 剑指Offer_06_从尾到头打印链表 {
     public int[] reversePrint(ListNode head) {
         if (head == null) return new int[]{};
         if (head.next == null) return new int[]{head.val};
@@ -46,6 +46,6 @@ public class 剑指_Offer06_从尾到头打印链表 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        Integers.println(new 剑指_Offer06_从尾到头打印链表().reversePrint2(head));
+        Integers.println(new 剑指Offer_06_从尾到头打印链表().reversePrint2(head));
     }
 }
