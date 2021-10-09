@@ -2,7 +2,7 @@ package com.cq.source.剑指Offer第二版;
 
 import com.cq.source.stack.Stack;
 
-public class 剑指Offer09_用两个栈实现队列 {
+public class 剑指Offer_09_用两个栈实现队列 {
     public static void main(String[] args) {
         CQueue queue = new CQueue();
         queue.appendTail(1);
