@@ -24,6 +24,19 @@ package com.cq.source.剑指Offer第二版;
  */
 public class 剑指Offer_12_矩阵中的路径 {
     public boolean exist(char[][] board, String word) {
+        if (board == null || board.length == 0 || board[0].length == 0) return false;
+        char[] words = word.toCharArray();
+        for (int w = 0; w < words.length; w++) {
+            for (int i = 0; i < board.length; i++) {
+                char[] chars = board[i];
+                for (int j = 0; j < chars.length; j++) {
+                    if (words[w] == board[i][j]) {
+                        // 找到第一个字符
+                    }
+                }
+            }
+        }
+
         return false;
     }
 
