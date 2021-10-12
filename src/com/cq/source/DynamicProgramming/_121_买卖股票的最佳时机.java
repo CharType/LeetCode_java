@@ -11,8 +11,6 @@ package com.cq.source.DynamicProgramming;
  * 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * dp[i] 第i天卖出的时候 股票获得的最大价值
- * if(prices[i] > prices[i-1]) dp[i] = dp[i-1] + (prices[i] - prices[i-1])
- * if(prices[i] < prices[i-1]) 变量从0 到dp[i-1] 找到最大的值 记录下来
  */
 public class _121_买卖股票的最佳时机 {
     public static void main(String[] args) {
