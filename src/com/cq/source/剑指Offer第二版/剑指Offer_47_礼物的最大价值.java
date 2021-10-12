@@ -31,6 +31,29 @@ public class 剑指Offer_47_礼物的最大价值 {
         System.out.println(maxValue(grid));
         System.out.println("-----------------------------------------------");
         System.out.println(maxValue1(grid));
+        System.out.println("-----------------------------------------------");
+        System.out.println(maxValue2(grid));
+    }
+
+    public static int maxValue2(int[][] grid) {
+        if (grid == null || grid[0] == null || grid[0].length == 0) return 0;
+        int[] dp = new int[grid[0].length];
+        dp[0] = grid[0][0];
+        for (int i = 1; i < grid[0].length; i++) {
+            dp[i] = dp[i - 1] + grid[0][i];
+        }
+        Integers.println(dp);
+        for (int i = 1; i < grid.length; i++) {
+            int[] nums = grid[i];
+            dp[0] = dp[0] + grid[i][0];
+            for (int j = 1; j < nums.length; j++) {
+                dp[j] = Math.max(dp[j] + grid[i][j], dp[j - 1] + grid[i][j]);
+            }
+            Integers.println(dp);
+        }
+
+
+        return dp[grid[0].length - 1];
     }
 
     public static int maxValue1(int[][] grid) {
