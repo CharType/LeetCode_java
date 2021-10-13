@@ -24,6 +24,38 @@ package com.cq.source.DynamicProgramming;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class _72_编辑距离 {
+    // 优化成一维数组
+    static int minDistance1(String word1, String word2) {
+        if (word1 == null || word2 == null) return 0;
+        char[] chars1 = word1.toCharArray();
+        if (chars1.length == 0) return 0;
+        char[] chars2 = word2.toCharArray();
+        if (chars2.length == 0) return 0;
+        int[][] dp = new int[chars1.length + 1][chars2.length + 1];
+        // 初始化数据
+        for (int i = 1; i <= chars2.length; i++) {
+            dp[0][i] = i;
+        }
+        for (int i = 1; i <= chars1.length; i++) {
+            dp[i][0] = i;
+        }
+
+        for (int i = 1; i <= chars1.length; i++) {
+            for (int j = 1; j <= chars2.length; j++) {
+                int value1 = dp[i][j - 1] + 1;
+                int value2 = dp[i - 1][j] + 1;
+                int minValue = Math.min(value1, value2);
+                if (chars1[i - 1] == chars2[j - 1]) {
+                    dp[i][j] = Math.min(minValue, dp[i - 1][j - 1]);
+                } else {
+                    dp[i][j] = Math.min(minValue, dp[i - 1][j - 1]) + 1;
+                }
+            }
+        }
+
+        return dp[chars1.length][chars2.length];
+    }
+
     static int minDistance(String word1, String word2) {
         if (word1 == null || word2 == null) return 0;
         char[] chars1 = word1.toCharArray();
