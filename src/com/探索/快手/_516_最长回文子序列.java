@@ -9,23 +9,23 @@ public class _516_最长回文子序列 {
 
     public int longestPalindromeSubseq(String s) {
         if (s == null) return 0;
-        char [] chars = s.toCharArray();
+        char[] chars = s.toCharArray();
         if (chars.length <= 1) return chars.length;
-        int [][] dp = new int[chars.length][chars.length];
-        for (int i = chars.length - 1;i>= 0;i--) {
+        int[][] dp = new int[chars.length][chars.length];
+        for (int i = chars.length - 1; i >= 0; i--) {
             dp[i][i] = 1;
-            for (int j = i + 1;j < chars.length;j++) {
+            for (int j = i + 1; j < chars.length; j++) {
                 if (chars[i] == chars[j]) {
-                    dp[i][j] = dp[i+1][j-1] + 2;
+                    dp[i][j] = dp[i + 1][j - 1] + 2;
                 } else {
-                    dp[i][j] = Math.max(dp[i+1][j],dp[i][j-1]);
+                    dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
                 }
             }
         }
-        for (int [] nums : dp) {
+        for (int[] nums : dp) {
             Integers.println(nums);
         }
-        return dp[0][chars.length-1];
+        return dp[0][chars.length - 1];
 
     }
 
@@ -47,6 +47,6 @@ public class _516_最长回文子序列 {
 
     public static void main(String[] args) {
         _516_最长回文子序列 o = new _516_最长回文子序列();
-        System.out.println(o.longestPalindromeSubseq1("bbbad"));
+        System.out.println(o.longestPalindromeSubseq1("cbbc"));
     }
 }
