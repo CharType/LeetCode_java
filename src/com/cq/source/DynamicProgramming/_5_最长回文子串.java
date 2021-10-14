@@ -81,6 +81,37 @@ public class _5_最长回文子串 {
     }
 
     /**
+     * 扩展中心优化
+     *
+     * @param s
+     * @return
+     */
+    static String longestPalindrome3(String s) {
+        if (s == null) return s;
+        char[] chars = s.toCharArray();
+        if (chars.length <= 1) return s;
+        int maxLength = 1;
+        int begin = 0;
+        int i = 0;
+        while (i < chars.length) {
+            int l = i - 1;
+            int r = i;
+            while (++r < chars.length && chars[r] == chars[i]) ;
+            i = r;
+            while (l >= 0 && r < chars.length && chars[l] == chars[r]) {
+                l--;
+                r++;
+            }
+            int len = r - l - 1;
+            if (len > maxLength) {
+                maxLength = len;
+                begin = l + 1;
+            }
+        }
+        return new String(chars, begin, maxLength);
+    }
+
+    /**
      * @param cs
      * @param l
      * @param r
@@ -97,5 +128,6 @@ public class _5_最长回文子串 {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("abcdefedcba"));
         System.out.println(longestPalindrome2("abcdefedcba"));
+        System.out.println(longestPalindrome3("abcdefedcba"));
     }
 }
