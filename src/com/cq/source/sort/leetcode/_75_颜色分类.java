@@ -25,6 +25,7 @@ public class _75_颜色分类 {
     }
 
     public void swap(int[] nums, int index1, int index2) {
+        if (index1 == index2) return;
         int temp = nums[index1];
         nums[index1] = nums[index2];
         nums[index2] = temp;

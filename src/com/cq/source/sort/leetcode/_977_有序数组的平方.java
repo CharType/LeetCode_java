@@ -44,9 +44,33 @@ public class _977_有序数组的平方 {
         return newNums;
     }
 
+    public int[] sortedSquares2(int[] nums) {
+        if (nums == null || nums.length == 0) return nums;
+        int lindex = 0;
+        int rindex = nums.length - 1;
+        int[] res = new int[nums.length];
+        int index = nums.length - 1;
+        while (lindex < rindex || index >= 0) {
+            if (nums[lindex] * nums[lindex] > nums[rindex] * nums[rindex]) {
+                res[index--] = nums[lindex] * nums[lindex];
+                lindex++;
+            } else if (nums[lindex] * nums[lindex] < nums[rindex] * nums[rindex]) {
+                res[index--] = nums[rindex] * nums[rindex];
+                rindex--;
+            } else {
+                res[index--] = nums[rindex] * nums[rindex];
+                rindex--;
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         _977_有序数组的平方 o = new _977_有序数组的平方();
-        int[] nums = {-4, -1, 0, 3, 10};
-        Integers.println(o.sortedSquares(nums));
+//        int[] nums = {-4, -1, 0, 3, 10};
+//        Integers.println(o.sortedSquares(nums));
+
+        int[] nums = {-7, 3, 2, 3, 11};
+        Integers.println(o.sortedSquares2(nums));
     }
 }
