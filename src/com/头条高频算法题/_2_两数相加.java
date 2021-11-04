@@ -82,6 +82,7 @@ public class _2_两数相加 {
             curr = sum / 10;
             tailNode.next = new ListNode(sum % 10);
             tailNode = tailNode.next;
+            System.out.println(dymnnHead.next);
         }
         if (curr > 0) {
             tailNode.next = new ListNode(curr);
@@ -108,7 +109,6 @@ public class _2_两数相加 {
         head3.next.next.next.next = new ListNode(9);
         head3.next.next.next.next.next = new ListNode(9);
         head3.next.next.next.next.next.next = new ListNode(9);
-        head3.next.next.next.next.next.next.next = new ListNode(9);
 
         ListNode head4 = new ListNode(9);
         head4.next = new ListNode(9);
