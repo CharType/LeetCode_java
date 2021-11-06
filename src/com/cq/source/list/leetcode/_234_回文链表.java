@@ -54,6 +54,7 @@ public class _234_回文链表 {
         return true;
     }
 
+
     public static boolean isPalindrome2(ListNode head) {
         if (head == null || head.next == null) return true;
         if (head.next.next == null) return head.val == head.next.val;
@@ -69,6 +70,8 @@ public class _234_回文链表 {
         }
         return true;
     }
+
+    // 使用栈数据结构来解决
 
     public static ListNode reversalList(ListNode head) {
         if (head == null || head.next == null) return head;
