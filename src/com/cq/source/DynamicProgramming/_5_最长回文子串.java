@@ -127,7 +127,7 @@ public class _5_最长回文子串 {
 
     public static void main(String[] args) {
         System.out.println(longestPalindrome("abcdefedcba"));
-        System.out.println(longestPalindrome2("abcdefedcba"));
-        System.out.println(longestPalindrome3("abcdefedcba"));
+//        System.out.println(longestPalindrome2("abcdefedcba"));
+//        System.out.println(longestPalindrome3("abcdefedcba"));
     }
 }
