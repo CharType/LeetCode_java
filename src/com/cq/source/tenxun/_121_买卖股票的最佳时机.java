@@ -18,6 +18,5 @@ public class _121_买卖股票的最佳时机 {
         _121_买卖股票的最佳时机 o = new _121_买卖股票的最佳时机();
         int[] prices = {7, 8, 5, 3, 6, 4};
         System.out.println(o.maxProfit(prices));
-//        ss
     }
 }
