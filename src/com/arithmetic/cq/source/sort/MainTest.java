@@ -1,6 +1,5 @@
 package com.arithmetic.cq.source.sort;
 
-import com.arithmetic.cq.linkList.source.sort.cmp.*;
 import com.arithmetic.cq.source.sort.cmp.*;
 import com.arithmetic.tools.Asserts;
 import com.arithmetic.tools.Integers;
