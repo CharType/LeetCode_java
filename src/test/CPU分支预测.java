@@ -1,6 +1,6 @@
 package test;
 
-import com.tools.Times;
+import com.arithmetic.tools.Times;
 
 public class CPU分支预测 {
     public static void main(String[] args) {
