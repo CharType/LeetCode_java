@@ -1,4 +1,4 @@
-package com.compile;
+package com.compile.RegexTest;
 
 /**
  * 一个简单的Token。

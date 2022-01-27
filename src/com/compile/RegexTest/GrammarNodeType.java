@@ -1,4 +1,4 @@
-package com.compile;
+package com.compile.RegexTest;
 
 /**
  * 语法节点的类型。

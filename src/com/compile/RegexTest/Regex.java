@@ -1,4 +1,4 @@
-package com.compile;
+package com.compile.RegexTest;
 
 import java.util.*;
 

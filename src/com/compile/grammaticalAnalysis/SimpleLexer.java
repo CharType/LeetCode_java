@@ -1,8 +1,8 @@
-package com.compile.lexicalAnalysis;
-
+package com.compile.grammaticalAnalysis;
 
 import com.compile.interFace.Token;
 import com.compile.interFace.TokenReader;
+import com.compile.lexicalAnalysis.TokenType;
 
 import java.io.CharArrayReader;
 import java.io.IOException;

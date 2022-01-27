@@ -1,4 +1,6 @@
-package com.compile.lexicalAnalysis;
+package com.compile.interFace;
+
+import com.compile.lexicalAnalysis.TokenType;
 
 /**
  * 一个简单的Token。
@@ -11,7 +13,7 @@ public interface Token {
      *
      * @return
      */
-    public com.compile.lexicalAnalysis.TokenType getType();
+    public TokenType getType();
 
     /**
      * Token的文本值
